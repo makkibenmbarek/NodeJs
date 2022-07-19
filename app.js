@@ -8,7 +8,8 @@ require('dotenv').config()
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usersPimRouter = require('./routes/user.route');
-
+var chatRoomPimRouter = require('./routes/chat_room.route');
+var productsRouter = require('./routes/product.route');
 
 var app = express();
 
@@ -30,6 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/usersPim', usersPimRouter);
+app.use('/chatPim', chatRoomPimRouter);
+app.use('/products', productsRouter);
+
+
 
 
 // catch 404 and forward to error handler
